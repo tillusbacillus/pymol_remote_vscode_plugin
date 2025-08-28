@@ -1,0 +1,46 @@
+{
+  "name": "pymol-loader",
+  "displayName": "PyMOL Loader",
+  "version": "0.0.1",
+  "publisher": "you",
+  "engines": { "vscode": "^1.90.0" },
+  "activationEvents": ["onCommand:pymolLoader.loadStructures"],
+  "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/your-repo.git"
+    },
+  "contributes": {
+    "commands": [
+    { "command": "pymolLoader.loadStructures", "title": "Load in PyMOL" },
+    { "command": "pymolLoader.loadFolder", "title": "Load Folder in PyMOL (non-recursive)" },
+    { "command": "pymolLoader.loadFolderRecursive", "title": "Load Folder in PyMOL (recursive)" }
+    ],
+    "menus": {
+      "explorer/context": [
+      { "command": "pymolLoader.loadStructures", "group": "navigation@10", "when": "resourceScheme == file && !explorerResourceIsFolder && resourceExtname =~ /\\.(pdb|ent|cif|pdb\\.gz|cif\\.gz)$/i" },
+      { "command": "pymolLoader.loadFolder", "group": "navigation@10", "when": "resourceScheme == file && explorerResourceIsFolder" },
+      { "command": "pymolLoader.loadFolderRecursive", "group": "navigation@11", "when": "resourceScheme == file && explorerResourceIsFolder" }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "PyMOL Loader",
+      "properties": {
+        "pymolLoader.pythonPath": { "type": "string", "default": "python" },
+        "pymolLoader.wrapperScript": { "type": "string", "default": "${workspaceFolder}/tools/pymol_load_wrapper.py" },
+        "pymolLoader.port": { "type": "number", "default": 9123 },
+        "pymolLoader.reinitializeOnLoad": {"type": "boolean", "default": true, "description": "Reinitialize the PyMOL session before loading structures."}
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^18.0.0"
+  }
+}
