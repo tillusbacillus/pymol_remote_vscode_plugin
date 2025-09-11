@@ -10,10 +10,11 @@ Right-click files or folders in the VS Code Explorer to send them to PyMOL.
 - **Right-click on files** (`.pdb`, `.cif`, `.pdb.gz`, `.cif.gz`) → *Load in PyMOL*  
 - **Right-click on folders** →  
   - *Load All in Folder (non-recursive)*  
-  - *Load All in Folder (recursive)*  
+  - *Load All in Folder (recursive)* _...for those pesky boltz predictions_
 - **Settings toggle** for reinitializing the PyMOL session on each load  
-- Works with multiple selected files or folders  
-- Lightweight wrapper script calls your existing `load_structures` function
+- Works with multiple selected files or folders
+- Lightweight wrapper script calls existing `load_structures` function
+  - loading multiple files with the same name adds an index number (e.g. _2) to avoid overwriting files 
 
 ---
 
