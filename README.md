@@ -1,21 +1,35 @@
-cat > README.md << 'EOF'
-# PyMOL Loader (VS Code)
+# PyMOL Loader (VS Code Extension)
 
-Right-click PDB/CIF files or folders in VS Code to load them into a running PyMOL (via pymol-remote).
+A VS Code extension to quickly load PDB/CIF structures (and `.gz` variants) into a running [PyMOL](https://pymol.org/) session via [`pymol-remote`](https://github.com/tristan0x/pymol-remote).
 
-## Commands
-- **Load in PyMOL** (files)
-- **Load All in Folder (non-recursive)**
-- **Load All in Folder (recursive)**
+Right-click files or folders in the VS Code Explorer to send them to PyMOL.
 
-## Settings
-- `pymolLoader.pythonPath`
-- `pymolLoader.wrapperScript`
-- `pymolLoader.port`
-- `pymolLoader.reinitializeOnLoad`
+---
 
-## Dev
-```bash
-npm install
-npm run compile
-npx @vscode/vsce package --allow-missing-repository
+## ✨ Features
+- **Right-click on files** (`.pdb`, `.cif`, `.pdb.gz`, `.cif.gz`) → *Load in PyMOL*  
+- **Right-click on folders** →  
+  - *Load All in Folder (non-recursive)*  
+  - *Load All in Folder (recursive)*  
+- **Settings toggle** for reinitializing the PyMOL session on each load  
+- Works with multiple selected files or folders  
+- Lightweight wrapper script calls your existing `load_structures` function
+
+---
+
+## ⚙️ Settings
+In VS Code → Settings → **PyMOL Loader**:
+
+- `pymolLoader.pythonPath` → path to Python interpreter (with `pymol_remote` and your helper module installed)  
+- `pymolLoader.wrapperScript` → path to `tools/pymol_load_wrapper.py`  
+- `pymolLoader.port` → PyMOL RPC port (default: 9123)  
+- `pymolLoader.reinitializeOnLoad` → whether to reset PyMOL before loading (default: `true`)
+
+---
+
+## 🚀 Installation (local development)
+
+1. Clone this repo and install dependencies:
+   ```bash
+   npm install
+   npm run compile
