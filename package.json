@@ -23,14 +23,29 @@
       { "command": "pymolLoader.loadFolderRecursive", "group": "navigation@11", "when": "resourceScheme == file && explorerResourceIsFolder" }
       ]
     },
-    "configuration": {
-      "type": "object",
-      "title": "PyMOL Loader",
-      "properties": {
-        "pymolLoader.pythonPath": { "type": "string", "default": "python" },
-        "pymolLoader.wrapperScript": { "type": "string", "default": "${workspaceFolder}/tools/pymol_load_wrapper.py" },
-        "pymolLoader.port": { "type": "number", "default": 9123 },
-        "pymolLoader.reinitializeOnLoad": {"type": "boolean", "default": true, "description": "Reinitialize the PyMOL session before loading structures."}
+  "configuration": {
+    "type": "object",
+    "title": "PyMOL Loader",
+    "properties": {
+      "pymolLoader.pythonPath": {
+        "type": "string",
+        "default": "/nfs/scistore20/praetgrp/shared/software/pymol_remote_vscode_plugin/env/bin/python",
+        "description": "Python interpreter to run the loader."
+      },
+      "pymolLoader.wrapperScript": {
+        "type": "string",
+        "default": "/nfs/scistore20/praetgrp/shared/software/pymol_remote_vscode_plugin/pymol_load_wrapper.py",
+        "description": "Path to the Python wrapper that calls load_structures."
+      },
+      "pymolLoader.port": {
+        "type": "number",
+        "default": 9123,
+        "description": "PyMOL remote port."
+      },
+      "pymolLoader.reinitializeOnLoad": {
+        "type": "boolean",
+        "default": true,
+        "description": "Reinitialize the PyMOL session before loading structures."
       }
     }
   },
