@@ -22,7 +22,7 @@
       { "command": "pymolLoader.loadFolder", "group": "navigation@10", "when": "resourceScheme == file && explorerResourceIsFolder" },
       { "command": "pymolLoader.loadFolderRecursive", "group": "navigation@11", "when": "resourceScheme == file && explorerResourceIsFolder" }
       ]
-    },
+    }},
   "configuration": {
     "type": "object",
     "title": "PyMOL Loader",
