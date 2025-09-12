@@ -139,6 +139,7 @@ If all four checks succeed, your setup is correct.
   ```bash
   npm install
   npm run compile
+  npx @vscode/vsce package
   ```
 
 ---
