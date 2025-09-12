@@ -1,0 +1,9 @@
+name: pymol-remote-vscode
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - pymol-remote
+      - git+https://github.com/tillusbacillus/pymol_remote_vscode_plugin.git@v0.0.1 # or @main
