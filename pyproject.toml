@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymol-loader"
+version = "0.1.0"
+description = "Load PDB/CIF files into PyMOL via pymol-remote (API + CLI)"
+authors = [{ name = "Your Name" }]
+requires-python = ">=3.9"
+dependencies = ["pymol-remote>=0.7"]
+
+[project.scripts]
+pymol-load = "pymol_loader.cli:main"
