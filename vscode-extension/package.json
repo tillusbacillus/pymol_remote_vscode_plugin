@@ -1,14 +1,14 @@
 {
   "name": "pymol-loader",
   "displayName": "PyMOL Loader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "you",
   "engines": { "vscode": "^1.90.0" },
   "activationEvents": ["onCommand:pymolLoader.loadStructures"],
   "main": "./out/extension.js",
   "repository": {
     "type": "git",
-    "url": "https://example.com/your-repo.git"
+    "url": "https://github.com/tillusbacillus/pymol_remote_vscode_plugin.git"
     },
   "contributes": {
     "commands": [
@@ -22,25 +22,26 @@
       { "command": "pymolLoader.loadFolder", "group": "navigation@10", "when": "resourceScheme == file && explorerResourceIsFolder" },
       { "command": "pymolLoader.loadFolderRecursive", "group": "navigation@11", "when": "resourceScheme == file && explorerResourceIsFolder" }
       ]
-    }},
-  "configuration": {
-    "type": "object",
-    "title": "PyMOL Loader",
-    "properties": {
-      "pymolLoader.pythonPath": {
-        "type": "string",
-        "default": "/nfs/scistore20/praetgrp/shared/software/pymol_remote_vscode_plugin/env/bin/python",
-        "description": "Python interpreter to run the loader."
-      },
-      "pymolLoader.port": {
-        "type": "number",
-        "default": 9123,
-        "description": "PyMOL remote port."
-      },
-      "pymolLoader.reinitializeOnLoad": {
-        "type": "boolean",
-        "default": true,
-        "description": "Reinitialize the PyMOL session before loading structures."
+    },
+    "configuration": {
+      "type": "object",
+      "title": "PyMOL Loader",
+      "properties": {
+        "pymolLoader.pythonPath": {
+          "type": "string",
+          "default": "/nfs/scistore20/praetgrp/shared/software/pymol_remote_vscode_plugin/env/bin/python",
+          "description": "Python interpreter to run the loader."
+        },
+        "pymolLoader.port": {
+          "type": "number",
+          "default": 9123,
+          "description": "PyMOL remote port."
+        },
+        "pymolLoader.reinitializeOnLoad": {
+          "type": "boolean",
+          "default": true,
+          "description": "Reinitialize the PyMOL session before loading structures."
+        }
       }
     }
   },
