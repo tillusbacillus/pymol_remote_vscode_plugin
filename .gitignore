@@ -1,15 +1,15 @@
 cat > .gitignore << 'EOF'
-# Node / build
+
 node_modules/
 out/
 *.vsix
 package-lock.json
 
-# VS Code workspace cruft
 .vscode/
 *.log
 
-# OS
 .DS_Store
 Thumbs.db
 EOF
+
+.git/
