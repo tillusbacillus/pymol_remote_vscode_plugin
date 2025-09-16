@@ -148,3 +148,11 @@ If all four checks succeed, your setup is correct.
 
 MIT
 
+## 📝 Acknowledgements
+
+This extension uses [pymol-remote](https://github.com/Croydon-Brixton/pymol-remote.git),
+which is inspired by code from [PyMOL Open-Source](https://github.com/schrodinger/pymol-open-source).
+Both are licensed under the [Open-Source PyMOL License](https://github.com/schrodinger/pymol-open-source/blob/master/LICENSE) 
+from Schrödinger, LLC.
+
+PyMOL™ is a trademark of Schrödinger, LLC.
