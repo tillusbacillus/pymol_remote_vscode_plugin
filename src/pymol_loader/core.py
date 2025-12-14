@@ -28,7 +28,7 @@ def load_structures(
 
     Notes
     -----
-    - Uses string-based loading (`cmd.set_state`) to handle local buffers.
+    - Uses string-based loading (`cmd.load_raw`) to handle local buffers.
     - Supports .gz transparently.
     - Default object name for single-file mode is the filename stem unless `object_name` is provided.
     - In folder mode, names are derived from file stems and made unique by appending _2, _3, ... if needed.
@@ -93,9 +93,9 @@ def load_structures(
 
         buffer = read_text(root)
         try:
-            cmd.set_state(buffer, format=fmt_use, object=obj)
+            cmd.load_raw(buffer, format=fmt_use, object=obj)
         except TypeError:
-            cmd.set_state(buffer, fmt_use, obj)
+            cmd.load_raw(buffer, fmt_use, object=obj)
         loaded.append((str(root), obj, fmt_use))
         return loaded
 
@@ -123,9 +123,9 @@ def load_structures(
 
             buf = read_text(p)
             try:
-                cmd.set_state(buf, format=fmt_use, object=obj)
+                cmd.load_raw(buf, format=fmt_use, object=obj)
             except TypeError:
-                cmd.set_state(buf, fmt_use, obj)
+                cmd.load_raw(buf, fmt_use, obj)
 
             loaded.append((str(p), obj, fmt_use))
         except Exception as e:
