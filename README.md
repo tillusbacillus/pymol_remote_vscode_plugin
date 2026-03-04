@@ -133,10 +133,9 @@ If all four checks succeed, your setup is correct.
 ---
 
 ## 🧑‍💻 Development
-
-- TypeScript sources in `vscode-extension/src/`
-- Compile with:
+Compile with:
   ```bash
+  cd vscode-extension
   npm install
   npm run compile
   npx @vscode/vsce package
