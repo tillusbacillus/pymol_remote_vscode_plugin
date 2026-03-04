@@ -13,3 +13,5 @@ Thumbs.db
 EOF
 
 .git/
+pymol_loader.egg-info/
+build/
