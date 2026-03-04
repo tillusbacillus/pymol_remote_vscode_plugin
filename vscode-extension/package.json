@@ -1,7 +1,7 @@
 {
   "name": "pymol-loader",
   "displayName": "PyMOL Loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "you",
   "engines": { "vscode": "^1.90.0" },
   "activationEvents": ["onCommand:pymolLoader.loadStructures"],
@@ -18,7 +18,7 @@
     ],
     "menus": {
       "explorer/context": [
-      { "command": "pymolLoader.loadStructures", "group": "navigation@10", "when": "resourceScheme == file && !explorerResourceIsFolder && resourceExtname =~ /\\.(pdb|ent|cif|pdb\\.gz|cif\\.gz)$/i" },
+      { "command": "pymolLoader.loadStructures", "group": "navigation@10", "when": "resourceScheme == file && !explorerResourceIsFolder && resourceFilename =~ /\\.(pdb|ent|cif)(\\.gz)?$/i" },
       { "command": "pymolLoader.loadFolder", "group": "navigation@10", "when": "resourceScheme == file && explorerResourceIsFolder" },
       { "command": "pymolLoader.loadFolderRecursive", "group": "navigation@11", "when": "resourceScheme == file && explorerResourceIsFolder" }
       ]
